@@ -30,7 +30,7 @@
 			<!--Context includes-->
 			<dict>
 				<key>match</key>
-				<string>^(include =>?)\s+([\w\d_-]+)</string>
+				<string>^[ \t]*?(include =>?)\s+([\w\d_-]+)</string>
 				<key>captures</key>
 				<dict>
 					<key>1</key>
@@ -47,10 +47,30 @@
 				</dict>
 			</dict>
 
+			<!--Switch-->
+			<dict>
+				<key>match</key>
+				<string>^[ \t]*?(switch =>?)\s+([\w\d_-]+)</string>
+				<key>captures</key>
+				<dict>
+					<key>1</key>
+					<dict>
+						<key>name</key>
+						<string>keyword.other</string>
+					</dict>
+
+					<key>2</key>
+					<dict>
+						<key>name</key>
+						<string>entity.name.switch</string>
+					</dict>
+				</dict>
+			</dict>
+
 			<!--Extension declaration, patterns, priorities and priority labels-->
 			<dict>
 				<key>match</key>
-				<string>(^[ \t]*?exten\s+=>?)( (_\+?[NXZ\d\w\[\]*#\-.!]*|\+?[\d\w:*#]+|[ahiostT]|failed|fax|talk)(,([sn]|\d+|\w+\s*\+\s*\d+|hint)\b(\(([\w\d_-]+)\))?)?)?</string>
+				<string>^[ \t]*?(exten)[ \t]+=>?[ \t]*(_\+?[NXZ\d\w\[\]*#\-.!]*|\+?[\d\w:*#]+|[ahiostT]|failed|fax|talk),([sn]|\d+|\w+\s*\+\s*\d+|hint)\b(\([\w\d_-]+\))?</string>
 				<key>captures</key>
 				<dict>
 					<!-- Extension declaration -->
@@ -61,21 +81,21 @@
 					</dict>
 
 					<!-- Extension pattern -->
-					<key>3</key>
+					<key>2</key>
 					<dict>
 						<key>name</key>
 						<string>constant.regexp</string>
 					</dict>
 
 					<!-- Priority -->
-					<key>5</key>
+					<key>3</key>
 					<dict>
 						<key>name</key>
 						<string>constant.numeric</string>
 					</dict>
 
 					<!-- Priority label -->
-					<key>7</key>
+					<key>4</key>
 					<dict>
 						<key>name</key>
 						<string>constant.numeric</string>
@@ -86,7 +106,7 @@
 			<!-- 'same' keywords continues an extension declaration with priorities and priority labels-->
 			<dict>
 				<key>match</key>
-				<string>(^[ \t]*?same\s+=>?)(\s+(n|\d+)\b(\(([\w\d_-]+)\))?)?</string>
+				<string>^[ \t]*?(same)[ \t]*=>?[ \t]*(n|\d+)\b(\([\w\d_-]+\))?</string>
 				<key>captures</key>
 				<dict>
 					<!-- Continues an extension declaration -->
@@ -97,14 +117,14 @@
 					</dict>
 
 					<!-- Priority -->
-					<key>3</key>
+					<key>2</key>
 					<dict>
 						<key>name</key>
 						<string>constant.numeric</string>
 					</dict>
 
 					<!-- Priority label -->
-					<key>5</key>
+					<key>3</key>
 					<dict>
 						<key>name</key>
 						<string>constant.numeric</string>
