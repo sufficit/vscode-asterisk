@@ -50,7 +50,7 @@
 			<!--Extension declaration, patterns, priorities and priority labels-->
 			<dict>
 				<key>match</key>
-				<string>(^exten\s+=>?)( (_\+?[NXZ\d\w\[\]*#\-.!]*|\+?[\d\w:*#]+|[ahiostT]|failed|fax|talk)(,([sn]|\d+|\w+\s*\+\s*\d+|hint)\b(\(([\w\d_-]+)\))?)?)?</string>
+				<string>(^[ \t]*?exten\s+=>?)( (_\+?[NXZ\d\w\[\]*#\-.!]*|\+?[\d\w:*#]+|[ahiostT]|failed|fax|talk)(,([sn]|\d+|\w+\s*\+\s*\d+|hint)\b(\(([\w\d_-]+)\))?)?)?</string>
 				<key>captures</key>
 				<dict>
 					<!-- Extension declaration -->
@@ -86,7 +86,7 @@
 			<!-- 'same' keywords continues an extension declaration with priorities and priority labels-->
 			<dict>
 				<key>match</key>
-				<string>(^\s?same\s+=>?)(\s+(n|\d+)\b(\(([\w\d_-]+)\))?)?</string>
+				<string>(^[ \t]*?same\s+=>?)(\s+(n|\d+)\b(\(([\w\d_-]+)\))?)?</string>
 				<key>captures</key>
 				<dict>
 					<!-- Continues an extension declaration -->
