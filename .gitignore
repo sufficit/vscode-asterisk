@@ -48,3 +48,4 @@ Temporary Items
 
 # packaged extension
 *.vsix
+**package-lock.json
