@@ -1,9 +1,9 @@
 {
-    "name": "asterisksyntaxhighlighter",
-    "displayName": "Asterisk Syntax Highlighter",
+    "name": "asterisksyntaxhighlighter-sufficit",
+    "displayName": "Asterisk Syntax Highlighter (Sufficit)",
     "description": "Syntax highlighting for Asterisk dialplan",
     "version": "1.1.4",
-    "publisher": "peacefixation",
+    "publisher": "sufficit",
     "engines": {
         "vscode": "^1.13.0"
     },
@@ -41,6 +41,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/peacefixation/vscode-asterisk.git"
+        "url": "https://github.com/sufficit/vscode-asterisk.git"
+    },
+    "dependencies": {
+        "asterisksyntaxhighlighter-sufficit": "file:"
     }
 }
