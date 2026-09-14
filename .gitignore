@@ -51,3 +51,5 @@ Temporary Items
 
 **package-lock.json
 node_modules
+# Worktrees (padrao): arvores de trabalho em <repo>/.worktrees/
+**/.worktrees/
